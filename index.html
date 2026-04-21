@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application</title>
+    <link rel="icon" type="image/png" href="hero.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    
+    <div class="bg">
+        <span></span><span></span><span></span><span></span>
+    </div>
+    <!--Register Page-->
+    <div id="registerPage" class="page active glass">
+        <h1>Register</h1>
+        <input type="text" id="regUsername" placeholder="Username">
+        <input type="password" id="regPassword" placeholder="Password">
+        <button onclick="register()">Register</button>
+    </div>
+    <!--Login Page-->
+    <div id="LoginPage" class="page glass">
+        <h1>Login</h1>
+        <input type="text" id="loginUser" placeholder="Username">
+        <input type="password" id="loginPass" placeholder="Password">
+        <button onclick="Login()">Login</button>
+    </div>
+    <!--Quiz Page-->
+    <div id="quizPage" class="page">
+        <div class="quiz-layout">
+        <!--Header-->
+        <div class="quiz-header">
+            <div id="qNumber">Questions 1/20</div>
+            <div class="timer">⏳<span id="timer">15</span></div>
+            </div>
+            <!--Questions-->
+            <div class="question-box">
+                <h1 id="question">QuestionText</h1>
+            </div>
+            <!--Options-->
+            <div id="options" class="option-grid"></div>
+            <!--Next Button-->
+            <button id="next-btn" onclick="nextQuestion()">Next</button>
+        </div>
+    </div>
+    <!--Result Page-->
+    <div id="resultPage" class="page class">
+        <h1>Quiz Completed</h1>
+        <h2 id="score"></h2>
+        <button onclick="restart()">Restart</button>
+    </div>
+</body>
+</html>
