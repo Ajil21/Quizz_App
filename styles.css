@@ -149,19 +149,35 @@ button{
 button:hover{
 	transform: scale(1.1);
 }
+/* DEFAULT OPTION */
 .option{
- 	background: rgba(63, 124, 32, 1.0);
- 	padding: 10px;
- 	margin: 10px;
- 	border-radius: 15px;
- 	cursor: pointer;
- 	transition: 0.3s;
+    background: rgba(255,255,255,0.15);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+    border: 2px solid transparent;
 }
+
+/* HOVER */
 .option:hover{
- 	background: rgba(123,72,34, 0.4);
+    background: rgba(255,255,255,0.3);
+    transform: scale(1.05);
 }
-.correct{background: green !important;}
-.wrong{background: red !important;}
+
+/* CORRECT */
+.correct{
+    background: #2ecc71 !important; /* bright green */
+    border: 2px solid #27ae60;
+}
+
+/* WRONG */
+.wrong{
+    background: #e74c3c !important; /* red */
+    border: 2px solid #c0392b;
+}
 .top-bar{
 	position: absolute;
 	top: 20px;

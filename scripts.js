@@ -2,9 +2,20 @@ let storedUser = "";
 let storedPass = "";
 
 // REGISTER
-function switchPage(id) {
-	document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-	document.getElementById(id).classList.add("active");
+function register() {
+    let u = document.getElementById("regUsername").value;
+    let p = document.getElementById("regPassword").value;
+
+    if (u === "" || p === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    storedUser = u;
+    storedPass = p;
+
+    alert("Registration successful!");
+    switchPage("LoginPage");
 }
 // LOGIN
 function login() {
@@ -92,13 +103,19 @@ function loadQuestion() {
 
 function checkAnswer(ans, el) {
     let correct = questions[index].answer;
-document.querySelectorAll(".option").forEach(o=>o.onclick=null);
 
-    if(ans === correct) {
-        el.classList.add("correct");
-        score++;
-    } else {
+    document.querySelectorAll(".option").forEach((o, i) => {
+        o.onclick = null;
+
+        if(i === correct){
+            o.classList.add("correct");
+        }
+    });
+
+    if(ans !== correct){
         el.classList.add("wrong");
+    } else {
+        score++;
     }
 
     clearInterval(timer);
@@ -121,8 +138,8 @@ function restart() {
 }
 
 // DOM refs
-const regUser = document.getElementById("regUser");
-const regPass = document.getElementById("regPass");
+const regUser = document.getElementById("regUsername");
+const regPass = document.getElementById("regPassword");
 const loginUser = document.getElementById("loginUser");
 const loginPass = document.getElementById("loginPass");
 const question = document.getElementById("question");
